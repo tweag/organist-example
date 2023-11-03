@@ -23,8 +23,20 @@ let minio_port = 9031 in
 %{organist.import_nix "nixpkgs#minio"}/bin/minio server --address :%{std.to_string minio_port} ./.minio-data
     "%,
   },
+
+  editorconfig.sections = {
+    "*".indent_style = 'space,
+    "*".indent_size = 2,
+    "*".insert_final_newline = true,
+    "Makefile".indent_style = 'tab,
+    "*.py" = {
+      indent_style = 'space,
+      indent_size = 4,
+    },
+  },
 }
   | (
     organist.OrganistExpression
     & organist.services.Schema
+    & organist.tools.editorconfig.Schema
   )
