@@ -39,4 +39,5 @@ let minio_port = 9031 in
     organist.OrganistExpression
     & organist.services.Schema
     & organist.tools.editorconfig.Schema
+    & organist.tools.direnv.Schema
   )
