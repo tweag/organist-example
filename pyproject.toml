@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "s3upload"
+version = "0.1.0"
+description = "Upload files to s3"
+authors = ["Théophane Hufschmitt <theophane.hufschmitt@tweag.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+boto3 = "^1.28.77"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
